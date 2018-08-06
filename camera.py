@@ -25,7 +25,7 @@ or you can set it to 0 to reset. """
 camera.start_preview()
 camera.start_recording('/home/pi/Desktop/video.h264')
 print("Recording ...")
-sleep(5)
+sleep(10)
 camera.stop_recording()
 camera.stop_preview()
 
@@ -34,23 +34,19 @@ been recorded, due to omxplayer’s fast frame rate.
 $ omxplayer video.h264"""
 
 camera.start_preview()
-sleep(2)
 camera.resolution = (3280, 2464)
-camera.framerate = 15
-# MAX Resolution
-# camera.annotate_text = "Hello world!" # For add text on image
-# camera.annotate_text_size = 50 # 6-160 default 32
-# camera.brightness = 70 # For brightness 0-100
-# camera.contrast = 70 # 0-100
+camera.framerate = 39 # max framerate
+sleep(10)
 camera.capture('/home/pi/Desktop/max.jpg')
 camera.stop_preview()
 
-camera.start_preview()
+"""camera.start_preview()
 for effect in camera.IMAGE_EFFECTS:
     camera.image_effect = effect
     camera.annotate_text = "Effect: %s" % effect
     sleep(2)
-camera.stop_preview()
+camera.stop_preview()"""
 
 # camera.EXPOSURE_MODES include off, auto, night, nightpreview, backlight,
 # spotlight, sports, snow, beach, verylong, fixedfps, antishake
+
