@@ -5,7 +5,7 @@
 Labirent çözümü yapan modül
 """
 
-__autor__ = "Süleyman ERGEN"
+__author__ = "Süleyman ERGEN"
 
 import cv2
 import numpy as np
@@ -19,7 +19,7 @@ SAVE_PATH = "solved_maze.png"
 
 class Detector:
     """
-    başlangıç bitiş renk bilirlemek için kullanılan sınıf.
+    Başlangıç ve bitiş renklerini belirlemek için kullanılan sınıf.
     """
     # RED = ( [0, 0, 100], [150, 150, 255] )
     # GREEN = ( [0, 100, 0], [150, 255, 150] )
@@ -48,7 +48,7 @@ class Detector:
 
     def detect_point(self, img, color):
         """
-        başlangıç yada bitiş noktasını tespit eden ve tespit edilen alanın merkezini döndğren fonksiyon.
+        başlangıç yada bitiş noktasını tespit eden ve tespit edilen alanın merkezini döndüren fonksiyon.
         color: RED_RANGE verilirse başlangıç noktasını tespit eder.
         color: GREEN_RANGE verilirse başlangıç noktasını tespit eder.
 
@@ -77,7 +77,7 @@ class Detector:
 
 class Dimension:
     """
-    Gelizen noktaları tutar
+    Gezilen noktaları tutar
     """
     def __init__(self, point=(0, 0)):
         self.x, self.y = point
@@ -91,7 +91,7 @@ class Dimension:
 
 class Solver:
     """
-    Labirentin çözğmini yapan sınıftır.
+    Labirentin çözümünü yapan sınıftır.
     """
     def __init__(self, img):
         self.p = 0
@@ -163,15 +163,15 @@ class Solver:
 if __name__ == "__main__":
     image = cv2.imread(IMAGE_PATH)
 
-    # Başlangıç ve bitiş noklatalrının belirlenmesi
-    # kırmızı başlangıç yeşil bitiş noktası
+    # Başlangıç ve bitiş noktalarının belirlenmesi
+    # kırmızı başlangıç noktası, yeşil bitiş noktası
     detector = Detector()
     start_p = detector.detect_point(image, Detector.RED_RANGE)
     end_p = detector.detect_point(image, Detector.GREEN_RANGE)
     start_point = Dimension(start_p)
     end_point = Dimension(end_p)
 
-    # resmi önce gay birary be bgr formatına dönüştürür.
+    # resmi önce gray, binary ve bgr formatına dönüştürür.
     # yani labirent çözmeden önce resmi hazırlar.
     img_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     _, img_binary = cv2.threshold(img_gray, 60, 255, cv2.THRESH_BINARY)

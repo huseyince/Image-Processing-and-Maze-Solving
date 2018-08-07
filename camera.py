@@ -29,9 +29,9 @@ sleep(10)
 camera.stop_recording()
 camera.stop_preview()
 
-"""The video should play. It may actually play at a faster speed than what has
+""" The video should play. It may actually play at a faster speed than what has
 been recorded, due to omxplayer’s fast frame rate.
-$ omxplayer video.h264"""
+$ omxplayer video.h264 """
 
 camera.start_preview()
 camera.resolution = (3280, 2464)
@@ -49,4 +49,3 @@ camera.stop_preview()"""
 
 # camera.EXPOSURE_MODES include off, auto, night, nightpreview, backlight,
 # spotlight, sports, snow, beach, verylong, fixedfps, antishake
-
