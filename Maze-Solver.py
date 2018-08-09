@@ -13,7 +13,7 @@ import imutils
 import threading
 
 
-IMAGE_PATH = "Maze_path_to_solve"
+IMAGE_PATH = "maze_1.jpg"
 SAVE_PATH = "solved_maze.png"
 
 
