@@ -13,7 +13,7 @@ import imutils
 import threading
 
 
-IMAGE_PATH = "maze_1.jpg"
+IMAGE_PATH = "maze2edit.jpg"
 SAVE_PATH = "solved_maze.png"
 
 
@@ -164,10 +164,10 @@ if __name__ == "__main__":
     image = cv2.imread(IMAGE_PATH)
 
     # Başlangıç ve bitiş noktalarının belirlenmesi
-    # kırmızı başlangıç noktası, yeşil bitiş noktası
+    # kırmızı bitiş noktası, yeşil başlangıç noktası
     detector = Detector()
-    start_p = detector.detect_point(image, Detector.RED_RANGE)
-    end_p = detector.detect_point(image, Detector.GREEN_RANGE)
+    start_p = detector.detect_point(image, Detector.GREEN_RANGE)   
+    end_p = detector.detect_point(image, Detector.RED_RANGE)
     start_point = Dimension(start_p)
     end_point = Dimension(end_p)
 
