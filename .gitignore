@@ -105,3 +105,5 @@ venv.bak/
 
 # junk
 .solved_maze.png
+
+\.idea/
