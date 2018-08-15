@@ -5,8 +5,6 @@
 Labirent çözümü yapan modül
 """
 
-__author__ = "Süleyman ERGEN"
-
 import cv2
 import numpy as np
 import imutils
